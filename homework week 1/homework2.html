@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>แบบฝึกหัดบทที่ 5</title>
+</head>
+<body>
+  <h2>กรอกชื่อของคุณ</h2>
+  <input type="text" id="nameInput" placeholder="พิมพ์ชื่อของคุณที่นี่">
+  <p id="welcomeMessage"></p>
+
+  <h2>เลือกภาษาโปรแกรมที่คุณชอบ</h2>
+  <select id="languageSelect">
+    <option value="">-- เลือกภาษา --</option>
+    <option value="JavaScript">JavaScript</option>
+    <option value="Python">Python</option>
+    <option value="Go">Go</option>
+  </select>
+  <p id="languageMessage"></p>
+
+  <script>
+    const nameInput = document.getElementById("nameInput");
+    const welcomeMessage = document.getElementById("welcomeMessage");
+
+    nameInput.addEventListener("input", function () {
+      const name = nameInput.value.trim();
+      welcomeMessage.textContent = name ? `ยินดีต้อนรับ, ${name}` : "";
+    });
+    const languageSelect = document.getElementById("languageSelect");
+    const languageMessage = document.getElementById("languageMessage");
+
+    languageSelect.addEventListener("change", function () {
+      const language = languageSelect.value;
+      languageMessage.textContent = language ? `คุณเลือกภาษา ${language}` : "";
+    });
+  </script>
+</body>
+</html>
